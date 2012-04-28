@@ -1,0 +1,1 @@
+A generic socket pool implementation which supports both threading and gevent. Builtin support for pymongo. Some extra useful utilities are also included.
