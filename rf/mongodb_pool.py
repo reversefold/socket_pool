@@ -1,6 +1,6 @@
 from queue import Empty
 from rf.socket_pool import SocketPool
-from pymongo.pool import BasePool
+from pymongo import pool
 
 
 class Error(Exception):
@@ -36,7 +36,7 @@ class SetSocketPool(SocketPool):
         return iter(socks)
 
 
-class MongoDBPool(BasePool):
+class MongoDBPool(pool.Pool):
     def __init__(self, *args, **kwargs):
         pool_size = kwargs.pop('pool_size', None)
         max_pool_size = kwargs.pop('max_pool_size', None)
